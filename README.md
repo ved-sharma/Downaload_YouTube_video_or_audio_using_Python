@@ -71,6 +71,8 @@ out_file = video.download(output_path=destination, filename=yt.title+".mp3")
 print(yt.title + " has been successfully downloaded.")
 ```
 
+## Link to jupyter notebook
+[Download YT video or audio]()
 
 ## Credit  
 https://www.geeksforgeeks.org/download-video-in-mp3-format-using-pytube/
