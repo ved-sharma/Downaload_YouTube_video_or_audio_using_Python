@@ -43,7 +43,7 @@ destination = str(input(">> ")) or '.'
 # download the file as an mp4 file
 out_file = video.download(output_path=destination)
   
-# result of success
+# print message for success
 print(yt.title + " has been successfully downloaded.")
 ```
 ## To save only the audio .mp3 file
@@ -67,7 +67,7 @@ destination = str(input(">> ")) or '.'
 # download the file. Filename needs to be defined explicitly as an mp3, otherwise it will download the audio file as an mp4
 out_file = video.download(output_path=destination, filename=yt.title+".mp3")
   
-# result of success
+# print message for success
 print(yt.title + " has been successfully downloaded.")
 ```
 
