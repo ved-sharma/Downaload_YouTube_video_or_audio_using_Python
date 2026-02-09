@@ -103,11 +103,12 @@ What those flags mean:
 If you see an "Invalid audio stream" error, then this .mp3 file might actually be an AAC (mp4/m4a) file.  
 In the ffmpeg command above, just change to ```output.m4a```  
 <br>
+**M4A is the successor to MP3. It was designed to provide better sound quality while taking up less storage space.**  
+<br>
 If you absolutely NEED an .mp3 file, you must tell FFmpeg to re-encode the audio into the MP3 format:
 ```bash
-ffmpeg -i Premanand.mp3 -ss 00:01:00 -to 00:02:00 -c:a libmp3lame -q:a 2 Radha_naam.mp3
+ffmpeg -i input.mp3 -ss 00:01:00 -to 00:02:00 -c:a libmp3lame -q:a 2 output.mp3
 ```
-
 
 ## Link to the Jupyter notebook
 change pytube to pytubefix in the notebook
