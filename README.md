@@ -1,4 +1,5 @@
-These instructions are based on the Anaconda distribution of Python and the [pytube](https://pytube.io/en/latest/index.html) package to download the YouTube videos (mp4) or the audio only files (mp3)
+Use the instructions from [pytubefix](https://github.com/JuanBindez/pytubefix) package to download the YouTube videos (mp4) or the audio only files (mp3)
+[Documentation](https://pytubefix.readthedocs.io/en/latest/)
 
 1. Open Anaconda prompt and create a new environment (called YT) with python 3.8  
 ```bash
@@ -12,7 +13,7 @@ conda activate YT
 
 3. Once in the environment, install pytube and jupyter  
 ```bash
-pip install pytube
+pip install pytubefix
 conda install jupyter
 ```
 
@@ -20,7 +21,7 @@ conda install jupyter
 
 ```python
 # import packages
-from pytube import YouTube
+from pytubefix import YouTube
 import os
 
 # Put the YouTube url to download
@@ -79,6 +80,7 @@ print(yt.title + " has been successfully downloaded.")
 ```
 
 ## Link to the Jupyter notebook
+change pytube to pytubefix in the notebook
 [Download YT video or audio](https://github.com/ved-sharma/Downaload_YouTube_video_audio/blob/224006cc88fc10210362c7e3c349ec497c9f2a2d/Download%20YT%20video%20or%20audio.ipynb)
 
 ## Credit  
