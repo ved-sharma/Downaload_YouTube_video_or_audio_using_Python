@@ -1,5 +1,5 @@
-Use the instructions from [pytubefix](https://github.com/JuanBindez/pytubefix) package to download the YouTube videos (mp4) or the audio only files (mp3)
-[Documentation](https://pytubefix.readthedocs.io/en/latest/)
+Use the instructions from [pytubefix](https://github.com/JuanBindez/pytubefix) package to download the YouTube videos (mp4) or the audio only files (mp3)  
+[pytubefix Documentation](https://pytubefix.readthedocs.io/en/latest/)
 
 1. Open Anaconda prompt and create a new environment (called YT) with python 3.8  
 ```bash
