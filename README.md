@@ -1,5 +1,6 @@
-Use the instructions from [pytubefix](https://github.com/JuanBindez/pytubefix) package to download the YouTube videos (mp4) or the audio only files (mp3)  
-[pytubefix Documentation](https://pytubefix.readthedocs.io/en/latest/)
+Using [pytubefix](https://github.com/JuanBindez/pytubefix) package to download YouTube videos (mp4) or audio only files (m4a, mp3)  
+<br>
+[pytubefix documentation](https://pytubefix.readthedocs.io/en/latest/)
 
 1. Open Anaconda prompt and create a new environment (called YT) with python 3.8  
 ```bash
@@ -11,7 +12,7 @@ conda create -n YT python=3.8
 conda activate YT
 ```
 
-3. Once in the environment, install pytube and jupyter  
+3. Once in the environment, install pytubefix and jupyter  
 ```bash
 pip install pytubefix
 conda install jupyter
@@ -54,7 +55,7 @@ out_file = video.download(output_path=destination)
 # print message of success
 print(yt.title + " has been successfully downloaded.")
 ```
-## To save only the audio .mp3 file
+## To save only the audio .m4a/.mp3 file
 ```python
 # filter strems for audio only files
 print(*yt.streams.filter(only_audio=True), sep='\n')
@@ -80,9 +81,8 @@ print(yt.title + " has been successfully downloaded.")
 ```
 
 ## Crop a downloaded audio file using ffmpeg
-ffmpeg installation
 ```bash
-# check if already installed
+# check if ffmpeg already installed on the system
 ffmpeg -version
 which ffmpeg
 
@@ -91,21 +91,26 @@ sudo apt update
 sudo apt install ffmpeg
 ```
 
+Crop command  
 ```bash
 ffmpeg -i input.mp3 -ss 00:01:00 -to 00:02:00 -c copy output.mp3
 ```
 What those flags mean:  
-- -i input.mp3: Your original file.
-- -ss 00:01:00: The start time (HH:MM:SS).
-- -to 00:02:00: The end time.
-- -c copy: it copies the audio without re-encoding it, so there is zero loss in quality and it finishes instantly.
+- ```-i input.mp3```: Your original file.
+- ```-ss 00:01:00```: The start time (HH:MM:SS).
+- ```-to 00:02:00```: The end time.
+- ```-c copy```: it copies the audio without re-encoding it, so there is zero loss in quality and it finishes instantly.
    
 If you see an "Invalid audio stream" error, then this .mp3 file might actually be an AAC (mp4/m4a) file.  
 In the ffmpeg command above, just change to ```output.m4a```  
 <br>
-**M4A is the successor to MP3. It was designed to provide better sound quality while taking up less storage space.**  
+
+> [!NOTE]
+> M4A is the successor to MP3. It was designed to provide better sound quality while taking up less storage space.  
+
 <br>
-If you absolutely NEED an .mp3 file, you must tell FFmpeg to re-encode the audio into the MP3 format:
+If you absolutely NEED an .mp3 file, you must tell FFmpeg to re-encode the audio into the MP3 format:  
+
 ```bash
 ffmpeg -i input.mp3 -ss 00:01:00 -to 00:02:00 -c:a libmp3lame -q:a 2 output.mp3
 ```
@@ -114,5 +119,4 @@ ffmpeg -i input.mp3 -ss 00:01:00 -to 00:02:00 -c:a libmp3lame -q:a 2 output.mp3
 change pytube to pytubefix in the notebook
 [Download YT video or audio](https://github.com/ved-sharma/Downaload_YouTube_video_audio/blob/224006cc88fc10210362c7e3c349ec497c9f2a2d/Download%20YT%20video%20or%20audio.ipynb)
 
-## Credit  
-https://www.geeksforgeeks.org/download-video-in-mp3-format-using-pytube/
+
