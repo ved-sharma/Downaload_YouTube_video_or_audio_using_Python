@@ -115,8 +115,6 @@ If you absolutely NEED an .mp3 file, you must tell FFmpeg to re-encode the audio
 ffmpeg -i input.mp3 -ss 00:01:00 -to 00:02:00 -c:a libmp3lame -q:a 2 output.mp3
 ```
 
-## Link to the Jupyter notebook
-change pytube to pytubefix in the notebook
-[Download YT video or audio](https://github.com/ved-sharma/Downaload_YouTube_video_audio/blob/224006cc88fc10210362c7e3c349ec497c9f2a2d/Download%20YT%20video%20or%20audio.ipynb)
-
+## Jupyter notebooks
+Take a look at the Jupyter notesbooks in the repo to download video/audio files.
 
