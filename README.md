@@ -112,8 +112,20 @@ In the ffmpeg command above, just change to ```output.m4a```
 If you absolutely NEED an .mp3 file, you must tell FFmpeg to re-encode the audio into the MP3 format:  
 
 ```bash
-ffmpeg -i input.mp3 -ss 00:01:00 -to 00:02:00 -c:a libmp3lame -q:a 2 output.mp3
+ffmpeg -i input.m4a -ss 00:01:00 -to 00:02:00 -c:a libmp3lame -q:a 2 output.mp3
 ```
+
+## To convert m4a files in a folder to mp3
+```bash
+for f in *.m4a; do
+    ffmpeg -i "$f" -c:a libmp3lame -q:a 2 "converted/${f%.m4a}.mp3"
+done
+```
+
+- for f in *.m4a;: This tells the shell to look at every file ending in .m4a and assign its name to the variable $f.
+- "$f": Using quotes around the variable is a "best practice". It ensures the command doesn't break if your filenames have spaces in them.
+- ${f%.m4a}.mp3: This is a bit of Bash parameter expansion. It takes the filename in $f, strips the .m4a extension from the end, and tacks on .mp3 instead. This prevents files from being named audio.m4a.mp3.
+
 
 ## Jupyter notebooks
 Take a look at the Jupyter notesbooks in the repo to download video/audio files.
