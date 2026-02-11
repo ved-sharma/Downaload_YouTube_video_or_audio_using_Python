@@ -116,6 +116,7 @@ ffmpeg -i input.m4a -ss 00:01:00 -to 00:02:00 -c:a libmp3lame -q:a 2 output.mp3
 ```
 
 ## To convert m4a files in a folder to mp3
+Run in Terminal:
 ```bash
 for f in *.m4a; do
     ffmpeg -i "$f" -c:a libmp3lame -q:a 2 "converted/${f%.m4a}.mp3"
