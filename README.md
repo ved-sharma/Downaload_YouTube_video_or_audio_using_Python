@@ -4,7 +4,7 @@ Using [pytubefix](https://github.com/JuanBindez/pytubefix) package to download Y
 
 1. Open Anaconda prompt and create a new environment (called YT) with python 3.8  
 ```bash
-conda create -n YT python=3.8
+conda create -n YT python=3.10
 ```
 
 2. Activate the environemnt:
@@ -23,10 +23,11 @@ conda install jupyter
 ```python
 # import packages
 from pytubefix import YouTube
+from pytubefix.cli import on_progress
 import os
 
 # Put the YouTube url to download
-yt = YouTube("https://www.youtube.com/watch?v=Dzej2YDQM6Q") 
+yt = YouTube("https://www.youtube.com/watch?v=Dzej2YDQM6Q", on_progress_callback=on_progress) 
 ```
 ## To save video+audio as an .mp4 file
 Each YouTube video is available as multiple versions (called streams) with different video quality (resolution) and whether it contains both the video+audio or just the video or audio.
